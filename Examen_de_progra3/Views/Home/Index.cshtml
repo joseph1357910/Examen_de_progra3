@@ -1,0 +1,32 @@
+﻿@model List<Profesor>
+
+<h1>Lista de Profesores</h1>
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cédula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Área de Conocimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var profesor in Model)
+            {
+                <tr>
+                    <td>@profesor.Cedula</td>
+                    <td>@profesor.Nombre</td>
+                    <td>@profesor.Apellido</td>
+                    <td>@profesor.AreaConocimiento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay profesores para mostrar.</p>
+}
